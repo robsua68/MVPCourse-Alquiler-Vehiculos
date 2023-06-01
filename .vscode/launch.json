@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Curso MVP - Alquiler de Vehiculos",
+            "request": "launch",
+            "tenant": "a93e1896-20c2-45dc-a7ff-024929ac40f6",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "Sandbox_Europe",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true
+        }
+    ]
+}
