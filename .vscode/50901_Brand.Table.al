@@ -1,6 +1,7 @@
 table 50901 Brand
 {
     DataClassification = CustomerContent;
+    LookupPageId = "Brand List";
     
     fields
     {

@@ -1,5 +1,5 @@
 tableextension 50900 Tx_Customer extends Customer
-{
+{    
     fields
     {
         // Add changes to table fields here
