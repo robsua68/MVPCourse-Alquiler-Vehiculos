@@ -71,18 +71,28 @@ page 50902 "Car Card"
     {
         area(Processing)
         {
-            action(ActionName)
+            action(PrintCarEntries)
             {
                 ApplicationArea = All;
+                Caption = 'Print Car Entries';
+                Image = Print;
+                Promoted = true;
+                PromotedCategory = Process;
                 
-                trigger OnAction()
+                trigger OnAction();
+                var
+                    CurrentCar: Record Car;
+
                 begin
+                    
+                    CurrentCar.Init();
+                    CurrentCar.SetRange("No.", Rec."No.");
+
+                    REPORT.RUNMODAL(Report::"Car Entries", true, false, CurrentCar);
                     
                 end;
             }
         }
     }
     
-    var
-        myInt: Integer;
 }

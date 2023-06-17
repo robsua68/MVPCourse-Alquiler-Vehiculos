@@ -41,12 +41,40 @@ page 50900 "Car List"
     {
         area(Processing)
         {
-            action(ActionName)
+            action(PrintCarList)
             {
                 ApplicationArea = All;
+                Caption = 'Print Car List';
+                Image = Print;
+                Promoted = true;
+                PromotedCategory = Process;
                 
                 trigger OnAction();
                 begin
+
+                    REPORT.RUNMODAL(Report::"Car list");
+                    
+                end;
+            }
+
+            action(PrintCarEntries)
+            {
+                ApplicationArea = All;
+                Caption = 'Print Car Entries';
+                Image = Print;
+                Promoted = true;
+                PromotedCategory = Process;
+                
+                trigger OnAction();
+                var
+                    CarRecord: Record Car;
+
+                begin
+
+                    CarRecord.Init();
+                    CurrPage.SetSelectionFilter(CarRecord);
+
+                    REPORT.RUNMODAL(Report::"Car Entries", true, false, CarRecord);
                     
                 end;
             }
